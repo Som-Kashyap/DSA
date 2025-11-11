@@ -2,6 +2,8 @@
 #include <bits/stdc++.h>
 #include <vector>
 #include <algorithm>
+
+
 using namespace std;
 
 int Duplicates(vector<int> &arr)
@@ -16,6 +18,7 @@ int Duplicates(vector<int> &arr)
         if (s.find(arr[i]) != s.end())
         {
             ans.push_back(arr[i]);
+            continue;
           
         }
         s.insert(arr[i]);

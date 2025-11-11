@@ -2,10 +2,9 @@
   "configurations": [
     {
       "name": "windows-gcc-x86",
-      "includePath": ["&{workspaceFolder}/**",
-        "C:/Users/kashy/Downloads/mysql-connector-c++-9.5.0-winx64.zip/mysql-connector-c++-9.5.0-winx64"
+      "includePath": [
+        "${workspaceFolder}/**"
       ],
-      "defines":[],
       "compilerPath": "C:/MinGW/bin/gcc.exe",
       "cStandard": "${default}",
       "cppStandard": "${default}",
