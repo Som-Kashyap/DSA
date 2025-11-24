@@ -1,0 +1,3 @@
+
+    for (int val : digits)
+    {

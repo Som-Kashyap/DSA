@@ -24,19 +24,24 @@ int Sign(vector<int> &nums)
         else
         {
             ans = 0;
-            
+            return ans;
             break;
         }
     }
 
     if ((negative % 2) != 0)
     {
-        ans = -1;
+        
     }
-    else if ((negative % 2) >= 0)
+    else if ((negative % 2) > 0)
     {
         ans = 1;
     }
+    if(negative==positive){
+            ans = -1;
+    }else{
+        ans = 1;
+}
 
     return ans;
 }

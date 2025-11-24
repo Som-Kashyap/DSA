@@ -2,34 +2,18 @@
 #include <vector>
 #include <bits/stdc++.h>
 #include <algorithm>
+#include<unordered_set>
 using namespace std;
 
-int FindingDuplicates(vector<int> &arr)
+vector<int> FindingDuplicates(vector<int> &nums)
 {
-    int n = arr.size();
+ unordered_set<int>s;
 
-    vector<int> freq;
-    vector<int> ans;
+ vector<int>ans;
 
-    for (int i = 0; i < n; i++)
-    {
-        freq[arr[i]]++;
-    }
-    for (int val : arr)
-    {
-        if (freq[val] > 1)
-        {
-            ans.push_back(val);
-        }
-    }
-    for (int val : ans)
-    {
-        return val;
-    }
-}
-int main()
-{
-    vector<int> arr = {1, 1, 3, 4, 2, 5, 2};
-    cout << "Duplicates: " << FindingDuplicates(arr) << endl;
-    return 0;
+ for(int i=0; i<nums.size(); i++){
+    if(s.find(nums[i]==s.end()){
+
+    })
+ }
 }
