@@ -31,7 +31,7 @@ int RepeatingAndMissing(vector<vector<int>> &mat)
     b=ExpSum+a-ActSum;
     ans.push_back(b);
    
-    cout<<"Duplicate ans Missing respectfully. "<<endl;
+    cout<<"Duplicate ans Missing respectively. "<<endl;
     for (int val : ans)
     {
         return val;

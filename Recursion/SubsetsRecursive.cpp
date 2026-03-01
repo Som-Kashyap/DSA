@@ -3,40 +3,44 @@
 
 using namespace std;
 
-void PrintSubsets(vector<int> &nums, vector<int> &ans, int i)
+void PrintSubsets(vector<int> &nums,vector<vector<int>> &subsets, vector<int> &ans, int i)
 {
 
-    int n = nums.size();
+    // Base Case:
 
-    if (i == n)
-    {
+    if ( i==nums.size() ) {
 
-        for (int val : ans)
-        {
-            cout << val << " ";
-        }
-        cout << endl;
+        subsets.push_back ( ans );
         return;
     }
 
-    // Selecting Elements:
-    ans.push_back(nums[i]);
+    // Fixing Elements:
+    ans.push_back( nums[i] );
 
-     PrintSubsets(nums, ans, i + 1);
+    // Recusrive call for rest of the elements:
+    PrintSubsets ( nums , subsets , ans , i+1);
 
-    // Rejecting Elements:
-
+    // Backtracking:
     ans.pop_back();
-
-     PrintSubsets(nums, ans, i + 1);
+    
 }
-int main()
-{
+vector<vector<int>>& Subsets( vector<int> &nums,vector<vector<int>> &subsets, vector<int> &ans ){
 
-    vector<int> nums = {1, 2, 3};
+    return subsets;
+    
+
+}
+
+int main () {
+
+     vector<int> nums = {1, 2, 3};
+    vector<vector<int>>subsets;
     vector<int> ans;
     int i = 0;
 
-    PrintSubsets(nums, ans, 0);
+    PrintSubsets(nums, subsets, ans, 0);
+    Subsets ( nums , subsets , ans );
+    
     return 0;
+
 }
