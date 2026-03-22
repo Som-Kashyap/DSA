@@ -5,7 +5,7 @@ using namespace std;
 
 bool IsSame(string s1 , string s2){
 
-    cout<<(s1==s2)<<endl;
+    return s1==s2;
 }
 int main(){
 

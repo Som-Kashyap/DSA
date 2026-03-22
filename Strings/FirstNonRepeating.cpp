@@ -36,7 +36,7 @@ int main()
     cout << "Enter a repeating string : " << endl;
     getline(cin, str);
 
-    cout << "First non-rpeating character is : " << NonRepeating(str) << endl;
+    cout << "First non-repeating character is : " << NonRepeating(str) << endl;
 
     return 0;
 }
