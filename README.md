@@ -10,6 +10,8 @@ This repository contains my C++ and Data Structures practice.
 -STL
 -Hashing (STL maps/sets)
 -Linked Lists
+-Stack
+-Queue
 -Trees (coming soon )
 
 ## Goal
