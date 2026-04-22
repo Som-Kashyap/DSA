@@ -1,3 +1,9 @@
+// Problem : Check if a number is palindrome
+
+// Approach : Reversed num is created after checking for non-possible cases ( num should neither be 0 nor a multiple of 10 )
+
+// Result : num is palindrome if reversed num == num
+
 #include<iostream>
 
 using namespace std;
