@@ -12,7 +12,7 @@ This repository contains my C++ and Data Structures practice.
 -Linked Lists
 -Stack
 -Queue
--Trees (coming soon )
+-Trees 
 
 ## Goal
 Buliding strong problem solving and algorithmic thinking.
