@@ -30,12 +30,27 @@ void addChild ( Node* parent , Node* child ) {
 
 }
 
+void printParents ( Node* node , Node* parent ) {
+
+    if ( parent = NULL ) cout<<node->data<<"-> null(0)"<<endl;
+
+    else cout<<node->data<<"->"<<parent->data<<endl;
+
+    for ( auto child : node->children ) printParents ( child , node );
+
+}
+
 int main () {
 
     Node* root = new Node(1);
     Node* n1 = new Node(2);
+    Node* n2 = new Node(3);
+    Node* n3 = new Node(4);
 
     addChild ( root , n1 );
+    addChild (root , n2);
+
+    printParents ( n1 , root );
 
     return 0;
 
