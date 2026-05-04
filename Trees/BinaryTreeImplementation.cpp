@@ -92,7 +92,7 @@ int main () {
     cout<<endl;
 
     postorder ( root , Post );
-    
+
     cout<<"Post-order traversal:- "<<endl;
 
     for ( int node : Post ) {
