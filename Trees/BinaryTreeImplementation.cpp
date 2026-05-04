@@ -21,21 +21,34 @@ struct Node {
 
 };
 
-void preorder ( Node* root , vector<int> &res ) {
+void preorder ( Node* root , vector<int> &Pre ) {
 
     if ( root == NULL ) return;
 
-    cout<<root->data<<endl;
+    Pre.push_back ( root->data );
 
-    preorder ( root->left , res );
+    preorder ( root->left , Pre );
 
-    preorder ( root->right , res );
+    preorder ( root->right , Pre );
+
+}
+
+void inorder ( Node* root , vector<int> &In) { 
+
+    if ( root == NULL ) return;
+
+    inorder ( root->left , In );
+
+    In.push_back ( root->data );
+
+    inorder ( root->right , In );
 
 }
 
 int main () {
 
-    vector<int>res;
+    vector<int>Pre;
+    vector<int>In;
 
     struct Node* root = new Node(1);
     root->left = new Node(2);
@@ -43,13 +56,22 @@ int main () {
 
     root->left->right = new Node(4);
 
-    preorder ( root , res );
+    preorder ( root , Pre );
 
-    for ( int node: res ) {
+    cout<<"Pre-order traversal:- "<<endl;
+
+    for ( int node: Pre ) {
 
         cout<<node<<" ";
 
     }
+    cout<<endl;
+
+    inorder ( root , In );
+
+    cout<<"In-order traversal:- "<<endl;
+
+    for ( int node : In ) cout<<node<<" ";
 
     return 0;
 
