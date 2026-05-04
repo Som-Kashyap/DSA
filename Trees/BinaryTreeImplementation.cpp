@@ -45,10 +45,23 @@ void inorder ( Node* root , vector<int> &In) {
 
 }
 
+void postorder ( Node* root , vector<int> &Post ) {
+
+    if ( root == NULL ) return;
+
+    postorder ( root->left , Post );
+
+    postorder ( root->right , Post );
+
+    Post.push_back ( root->data );
+
+}
+
 int main () {
 
     vector<int>Pre;
     vector<int>In;
+    vector<int>Post;
 
     struct Node* root = new Node(1);
     root->left = new Node(2);
@@ -71,7 +84,23 @@ int main () {
 
     cout<<"In-order traversal:- "<<endl;
 
-    for ( int node : In ) cout<<node<<" ";
+    for ( int node : In ) {
+
+        cout<<node<<" ";
+
+    }
+    cout<<endl;
+
+    postorder ( root , Post );
+    
+    cout<<"Post-order traversal:- "<<endl;
+
+    for ( int node : Post ) {
+
+        cout<<node<<" ";
+
+    }
+    cout<<endl;
 
     return 0;
 
