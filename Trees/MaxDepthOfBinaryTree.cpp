@@ -17,8 +17,8 @@ struct Node {
 
         val = x;
 
-        left = 0;
-        right = 0;
+        left = NULL;
+        right = NULL;
 
     }
 
