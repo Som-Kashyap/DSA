@@ -1,3 +1,9 @@
+// Problem: LC-94
+
+// Approach: Initiate pointer from root , move down storing nodes into stack , push elements to res vector in order while removing them from the stack , order:( left->root->right)
+
+// Invariant: At the end of the while loop , st.top() represents leaf node of left sub-tree
+
 #include<iostream>
 #include<vector>
 #include<stack>
