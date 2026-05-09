@@ -1,3 +1,7 @@
+// Problem : LC 124
+
+// Approach: Visit nodes recursively and calc sum of path of that particular node and update maxsum
+
 #include<iostream>
 #include<climits>
 
