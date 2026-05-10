@@ -1,3 +1,9 @@
+// Problem: LC 102
+
+// Approach: Initialize pointer from root , move it down storing current node into the queue,push left and right if applicable
+
+// Why this works? : front node is selected and popped,subsequent left and right nodes are pushed,size of the queue is being updated every iteration,then nodes are pushed to the vector (level wise as no. of iterations=no. of nodes at each level)
+
 #include<iostream>
 #include<vector>
 #include<queue>
