@@ -15,7 +15,7 @@ struct TreeNode{
      TreeNode* left;
      TreeNode* right;
 
-    TreeNode( int data ) {
+    TreeNode( int data ) {7
 
         val=data;
         left = NULL;
