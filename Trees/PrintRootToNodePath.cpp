@@ -1,3 +1,7 @@
+// Problem: Print root to node path
+
+// Approach: Preorder traversal is followed and nodes are pushed to path vector , nodes having no children && not matching the target are popped and false is returned , true is returned if target node is found
+
 #include<iostream>
 #include<vector>
 
@@ -33,7 +37,7 @@ bool RootToNodePath ( Node* root , vector<int> &path , int &target  ) {
     if ( RootToNodePath ( root->left , path , target ) || RootToNodePath ( root->right , path , target ) ) return true;
 
     path.pop_back ();
-    
+
     return false;
 
 }
