@@ -1,3 +1,7 @@
+// Problem: LC-863
+
+// Approach: Point to the target nodes and move outwards from it until distance equals k. Parent nodes are stored in hashmap for upward traversal. Visited nodes are stored in a hashmap to avoid re-traversal. 
+
 #include<iostream>
 #include<vector>
 #include<queue>
