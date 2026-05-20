@@ -1,3 +1,10 @@
+// Problem: Morris inorder-traversal
+
+// Approach: Leaf nodes are located in the left sub-tree and they are connected to their respective roots temporarily.
+//          curr pointer starting from root is moved , once root is reached , previous link is removed and curr is moved right
+
+// Why this works? : Since pointers point towards child nodes , we cannot traverse upwards , therefore we create threads.
+
 #include<iostream>
 #include<vector>
 
