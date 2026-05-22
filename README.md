@@ -1,6 +1,6 @@
 # C++ / DSA Practice
 
-This repository contains my C++ and Data Structures practice done mainly on LeetCode.
+This repository contains my C++ and Data Structures practice done mainly on LeetCode.  
 It is structured topic-wise , each folder contains my solution to DSA problems of that particular topic
 
 ## Topics Covered
