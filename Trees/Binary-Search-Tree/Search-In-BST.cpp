@@ -1,6 +1,6 @@
 // Problem: LC 700
 
-// Approach: Tree is traversed by comparing val of node with the target value , left if it is smaller and right otherwise
+// Approach: Tree is traversed by comparing val of node with the target value,left if it is smaller and right otherwise
 
 #include<iostream>
 
