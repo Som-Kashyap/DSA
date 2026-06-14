@@ -1,23 +1,49 @@
 # C++ / DSA Practice
 
-- This repository contains my C++ and Data Structures practice done mainly on LeetCode.  
-- It is structured topic-wise , each folder contains my solutions to DSA problems of that particular topic.    
+A collection of my C++ and Data Structures & Algorithms practice, primarily based on LeetCode problems.  
 
-- Solutions are written in standard C++ style for clarity and learning purposes rather than strictly following LeetCode's class-based submission format.
+The repository is organized topic-wise, with each folder containing solutions related to a specific data structure, algorithm, or problem-solving technique.  
 
+Solutions are written in clean, standard C++ with an emphasis on readability, problem-solving approaches, and effective use of the Standard Template Library (STL).
 
+## Stats
+
+- Problems 101+
+- Topics Covered 9+
+- Language: C++17
 
 ## Topics Covered
 - Arrays  
 - Strings  
 - Sorting  
 - Binary Search  
-- STL  
+- STL Practice  
 - Hashing (STL maps/sets)  
 - Linked Lists  
 - Stack  
 - Queue  
 - Trees  
 
-## Goal
-Buliding strong problem solving and algorithmic thinking.
+## Repository Structure
+
+Each topic is grouped into its own directory:
+
+- Arrays/
+- Strings/
+- Binary-Search/
+- Trees/
+...
+
+Within each folder, problem solutions are named after the corresponding problem for easy navigation.
+
+## Objectives
+
+- Strengthen problem-solving skills
+- Improve algorithmic thinking
+- Build proficiency in C++
+- Gain deeper understanding of data structures and their applications
+- Develop familiarity with STL containers and algorithms
+
+## Platform
+
+Most problems are sourced from LeetCode and implemented independently for learning and practice purposes.
