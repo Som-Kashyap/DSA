@@ -8,7 +8,7 @@ Solutions are written in clean, standard C++ with an emphasis on readability, pr
 
 ## Stats
 
-- Problems: 110+
+- Problems: 111+
 - Topics Covered: 9+
 - Language: C++17
 
