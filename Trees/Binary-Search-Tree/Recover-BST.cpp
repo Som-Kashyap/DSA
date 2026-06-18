@@ -1,6 +1,6 @@
 // Problem LC:99
 
-// Approach: inorder-traversal is used and pointers are initialized, values are swapped as discrepanices in BST order are found.
+// Approach: inorder-traversal is used and pointers are initialized, values are swapped as discrepancies in BST order are found.
 //  If the last pointer remains NULL, it means that the incorrectly placed nodes are adjacent and are swapped, else first and last are swapped.
 
 //  TC: O(N) for morris traversal
