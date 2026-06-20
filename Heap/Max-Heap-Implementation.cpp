@@ -31,7 +31,41 @@ class Heap {
             else return;
         }
     }
-    
+
+    void deleteRoot() {
+
+        if( nodes.size() == 0 ) return;
+
+        int size = nodes.size();
+
+        nodes[0] = nodes[size-1];
+        nodes.pop_back();
+        size--;
+        int index = 0;
+
+        while( index < size ) {
+
+        int leftIndex = 2*index+1;
+        int rightIndex = 2*index+2;
+
+        if( leftIndex < size && nodes[index] < nodes[leftIndex] ) {
+
+            swap( nodes[index] , nodes[leftIndex] );
+            index = leftIndex;
+
+        }
+
+        else if( rightIndex < size && nodes[index] < nodes[rightIndex] ) {
+
+            swap( nodes[index] , nodes[rightIndex] );
+            index = rightIndex;
+
+        }
+
+        else return;
+    }
+}
+
     void printNodes() {
 
         for( int node : nodes ) {
@@ -52,6 +86,12 @@ int main() {
     H.insert(6);
     H.insert(8);
 
+    cout<<"Heap: ";
+    H.printNodes();
+    
+    
+    H.deleteRoot();
+    cout<<"After deletion: ";
     H.printNodes();
 
     return 0;
