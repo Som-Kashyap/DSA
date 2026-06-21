@@ -1,6 +1,6 @@
-// Problem : Insert into max heap
+// Problem : implement max heap
 
-// Approach: Parent index is calculated as (index-1)/2 for every node being pushed, value is compared with parent node and swapped accordingly
+// Approach: Insert- Parent index is calculated as (index-1)/2 for every node being pushed, value is compared with parent node and swapped accordingly
 
 #include<iostream>
 #include<vector>
