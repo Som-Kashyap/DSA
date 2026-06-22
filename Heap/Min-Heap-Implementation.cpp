@@ -87,6 +87,23 @@ class Heap {
     }
 };
 
+void Heapify( vector<int>& nums, int i ) {
+
+    int n = nums.size();
+    int smallest_idx = i;
+    int left_idx = 2*smallest_idx+1;
+    int right_idx = 2*smallest_idx+2;
+
+    if( left_idx < n && nums[left_idx] < nums[smallest_idx] ) smallest_idx = left_idx;
+
+    if( right_idx < n && nums[right_idx] < nums[smallest_idx] ) smallest_idx = right_idx;
+
+    if ( smallest_idx != i ) {
+        swap( nums[smallest_idx] , nums[i] );
+        Heapify( nums , smallest_idx );
+    }
+
+}
 int main () {
 
     Heap H;
@@ -105,5 +122,22 @@ int main () {
     H.print();
     H.getRoot();
     
+    vector<int>nums = {9,5,6,2,3};
+
+    cout<<"Before Heapifying: ";
+    for ( int val : nums ) {
+        cout<<val<<" ";
+    }
+    cout<<endl;
+
+    for ( int i = nums.size()/2-1; i >= 0; i-- ) {
+        Heapify( nums , i );
+    }
+
+    cout<<"After heapifying: ";
+    for ( int val : nums ) {
+        cout<<val<<" ";
+    }
+
     return 0;
 }
