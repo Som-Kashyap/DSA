@@ -1,6 +1,8 @@
 // Problem : implement max heap
 
 // Approach: Insert- Parent index is calculated as (index-1)/2 for every node being pushed, value is compared with parent node and swapped accordingly
+//           Delete- Root is assigned val equal to last node and last node is popped, then the new root is heapified
+//           Heapify- In a CBT Leaf nodes range from (n/2+1) to n where n is array size and they are heap on their own, other nodes are checked and heapified
 
 #include<iostream>
 #include<vector>
@@ -76,6 +78,24 @@ class Heap {
     }
 };
 
+void Heapify( vector<int>& nums , int i ) {
+
+        int n = nums.size();
+
+        int largest_idx = i;
+        int left_idx = 2*largest_idx+1;
+        int right_idx = 2*largest_idx+2;
+
+        if( left_idx < n && nums[left_idx] > nums[largest_idx] ) largest_idx = left_idx;
+
+        else if( right_idx < n && nums[right_idx] > nums[largest_idx] ) largest_idx = right_idx;
+
+        if( largest_idx != i ) {
+        swap( nums[largest_idx] , nums[i] );
+        Heapify( nums , largest_idx );
+        }
+    }
+
 int main() {
 
     Heap H;
@@ -93,6 +113,23 @@ int main() {
     H.deleteRoot();
     cout<<"After deletion: ";
     H.printNodes();
+
+    vector<int>nums = {54,53,55,52,50};
+
+    cout<<"Before Heapifying: ";
+    for ( int val : nums ) {
+        cout<<val<<" ";
+    }
+    cout<<endl;
+
+    for ( int i = nums.size()/2; i >= 0; i-- ) {
+        Heapify( nums , i );
+    }
+
+    cout<<"After heapifying: ";
+    for ( int val : nums ) {
+        cout<<val<<" ";
+    }
 
     return 0;
 
