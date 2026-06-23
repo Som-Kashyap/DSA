@@ -3,134 +3,159 @@
 // Approach: Insert- Parent index is calculated as (index-1)/2 for every node being pushed, value is compared with parent node and swapped accordingly
 //           Delete- Root is assigned val equal to last node and last node is popped, then the new root is heapified
 //           Heapify- In a CBT Leaf nodes range from (n/2+1) to n where n is array size and they are heap on their own, other nodes are checked and heapified
+//           Heap Sort- 1st and last elements are swapped and then size--, repeated until all the elements are in a sorted order, root node is heapified. TC: O(nlogn)
 
-#include<iostream>
-#include<vector>
-
+#include <iostream>
+#include <vector>
 using namespace std;
 
-class Heap {
+class Heap
+{
+public:
+    vector<int> nodes;
 
-    public:
-    
-    vector<int>nodes;
+    void insert(int val)
+    {
+        nodes.push_back(val);
+        int index = nodes.size() - 1;
 
-    void insert( int val ) {
-
-        nodes.push_back( val );
-
-        int index = nodes.size()-1;
-
-        while( index > 0 ) {
-
-            int parent_index =(index-1)/2;
-
-            if( nodes[parent_index] < nodes[index] ) {
-
-                swap( nodes[parent_index] , nodes[index] );
+        while (index > 0)
+        {
+            int parent_index = (index - 1) / 2;
+            if (nodes[parent_index] < nodes[index])
+            {
+                swap(nodes[parent_index], nodes[index]);
                 index = parent_index;
             }
-            else return;
+            else
+                break;
         }
     }
 
-    void deleteRoot() {
+    void deleteRoot()
+    {
+        if (nodes.empty())
+            return;
 
-        if( nodes.size() == 0 ) return;
-
-        int size = nodes.size();
-
-        nodes[0] = nodes[size-1];
+        nodes[0] = nodes.back();
         nodes.pop_back();
-        size--;
         int index = 0;
 
-        while( index < size ) {
+        while (true)
+        {
+            int leftIndex = 2 * index + 1;
+            int rightIndex = 2 * index + 2;
+            int largestIndex = index;
 
-        int leftIndex = 2*index+1;
-        int rightIndex = 2*index+2;
+            if (leftIndex < nodes.size() && nodes[leftIndex] > nodes[largestIndex])
+            {
+                largestIndex = leftIndex;
+            }
+            if (rightIndex < nodes.size() && nodes[rightIndex] > nodes[largestIndex])
+            {
+                largestIndex = rightIndex;
+            }
 
-        if( leftIndex < size && nodes[index] < nodes[leftIndex] ) {
-
-            swap( nodes[index] , nodes[leftIndex] );
-            index = leftIndex;
-
+            if (largestIndex != index)
+            {
+                swap(nodes[index], nodes[largestIndex]);
+                index = largestIndex;
+            }
+            else
+                break;
         }
-
-        else if( rightIndex < size && nodes[index] < nodes[rightIndex] ) {
-
-            swap( nodes[index] , nodes[rightIndex] );
-            index = rightIndex;
-
-        }
-
-        else return;
     }
-}
 
-    void printNodes() {
-
-        for( int node : nodes ) {
-
-            cout<<node<<" ";
-        }
-        cout<<endl;
+    void printNodes()
+    {
+        for (int node : nodes)
+            cout << node << " ";
+        cout << endl;
     }
 };
 
-void Heapify( vector<int>& nums , int i ) {
+void Heapify(vector<int> &nums, int i, int n)
+{
+    int largest_idx = i;
+    int left_idx = 2 * i + 1;
+    int right_idx = 2 * i + 2;
 
-        int n = nums.size();
+    if (left_idx < n && nums[left_idx] > nums[largest_idx])
+        largest_idx = left_idx;
+    if (right_idx < n && nums[right_idx] > nums[largest_idx])
+        largest_idx = right_idx;
 
-        int largest_idx = i;
-        int left_idx = 2*largest_idx+1;
-        int right_idx = 2*largest_idx+2;
+    if (largest_idx != i)
+    {
+        swap(nums[i], nums[largest_idx]);
+        Heapify(nums, largest_idx, n);
+    }
+}
 
-        if( left_idx < n && nums[left_idx] > nums[largest_idx] ) largest_idx = left_idx;
+void HeapSort(vector<int> &nums)
+{
+    int n = nums.size();
+    if (n < 2)
+        return;
 
-        else if( right_idx < n && nums[right_idx] > nums[largest_idx] ) largest_idx = right_idx;
-
-        if( largest_idx != i ) {
-        swap( nums[largest_idx] , nums[i] );
-        Heapify( nums , largest_idx );
-        }
+    // Step 1: Build max heap
+    for (int i = n / 2 - 1; i >= 0; i--)
+    {
+        Heapify(nums, i, n);
     }
 
-int main() {
+    // Step 2: Extract elements one by one
+    for (int i = n - 1; i > 0; i--)
+    {
+        swap(nums[0], nums[i]);
+        Heapify(nums, 0, i);
+    }
+}
 
+int main()
+{
     Heap H;
-
     H.insert(10);
     H.insert(5);
     H.insert(1);
     H.insert(6);
     H.insert(8);
 
-    cout<<"Heap: ";
+    cout << "Heap: ";
     H.printNodes();
-    
-    
+
     H.deleteRoot();
-    cout<<"After deletion: ";
+    cout << "After deletion: ";
     H.printNodes();
 
-    vector<int>nums = {54,53,55,52,50};
+    vector<int> nums = {54, 53, 55, 52, 50};
 
-    cout<<"Before Heapifying: ";
-    for ( int val : nums ) {
-        cout<<val<<" ";
-    }
-    cout<<endl;
+    cout << "Before Heapifying: ";
+    for (int val : nums)
+        cout << val << " ";
+    cout << endl;
 
-    for ( int i = nums.size()/2; i >= 0; i-- ) {
-        Heapify( nums , i );
+    for (int i = nums.size() / 2 - 1; i >= 0; i--)
+    {
+        Heapify(nums, i, nums.size());
     }
 
-    cout<<"After heapifying: ";
-    for ( int val : nums ) {
-        cout<<val<<" ";
-    }
+    cout << "After heapifying: ";
+    for (int val : nums)
+        cout << val << " ";
+    cout << endl;
+
+    cout << "Before Heap Sort: ";
+    for (int val : nums)
+        cout << val << " ";
+    cout << endl;
+
+    HeapSort(nums);
+
+    cout << "After Heap Sort: ";
+    for (int val : nums)
+        cout << val << " ";
+    cout << endl;
 
     return 0;
-
 }
