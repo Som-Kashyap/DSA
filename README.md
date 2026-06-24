@@ -8,8 +8,8 @@ Solutions are written in clean, standard C++ with an emphasis on readability, pr
 
 ## Stats
 
-- Problems: 118+
-- Topics Covered: 9+
+- Problems: 123+
+- Topics Covered: 10+
 - Language: C++17
 
 ## Topics Covered
@@ -22,7 +22,8 @@ Solutions are written in clean, standard C++ with an emphasis on readability, pr
 - Linked Lists  
 - Stack  
 - Queue  
-- Trees  
+- Trees
+- Heap ( priority_queue ) 
 
 ## Repository Structure
 
