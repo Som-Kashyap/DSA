@@ -1,4 +1,4 @@
-// Problem : Graph BFS
+// Problem : Graph BFS (undirected)
 
 // Approach: a vis array is maintained to keep a track of elements that have been visited, elements are popped from the queue
 //           and pushed to the result vector whilw pushing their neighbours if they haven't been visited
