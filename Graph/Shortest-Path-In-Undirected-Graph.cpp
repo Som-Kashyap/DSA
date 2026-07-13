@@ -38,7 +38,7 @@ vector<int> shortestPath ( vector<vector<int>>& edges, int N, int M, int src ) {
 
         for ( auto it : adj[node] ) {
 
-            if ( distances[node] + 1 > distances[it] ) {
+            if ( distances[node] + 1 < distances[it] ) {
                 distances[it] = distances[node] + 1;
                 q.push(it);
             }

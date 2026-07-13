@@ -52,7 +52,7 @@ vector<int> shortestPath ( int N, int M, vector<int> edges[] ) {
 
     vector<int> distances(N);
 
-    for ( int i = 0; i < N; i++ ) distances[i] = INT_MAX;
+    for ( int i = 0; i < N; i++ ) distances[i] = INT_MIN;
 
     distances[0] = 0;
 
