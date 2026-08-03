@@ -17,7 +17,7 @@ class DisjointSet{
 
         for ( int i = 0; i <= n; i++ ) {
             parent[i] = i;
-            size[i] = i;
+            size[i] = 1;
         }
 
     }
@@ -38,14 +38,14 @@ class DisjointSet{
 
        if ( ult_u == ult_v ) return;
 
-       if ( rank[u] < rank[v] ) parent[ult_u] = ult_v;
+       if(rank[ult_u] < rank[ult_v]) parent[ult_u] = ult_v;
 
-       else if ( rank[v] > rank[u] ) parent[ult_v] = ult_u;
+       else if(rank[ult_v] < rank[ult_u]) parent[ult_v] = ult_u;
 
-       else {
-        parent[ult_v] = ult_u;
-        rank[u]++;
-       }
+       else{
+    parent[ult_v] = ult_u;
+    rank[ult_u]++;
+}
     }
 
     void UnionBySize ( int u, int v ) { //TC: O(4*alpha)
