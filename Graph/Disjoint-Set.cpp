@@ -26,8 +26,6 @@ class DisjointSet{
 
         if ( parent[node] == node ) return node;
 
-        int par;
-
         return parent[node] = FindUltimateParent(parent[node]); //Path Compression
     }
 
@@ -48,23 +46,21 @@ class DisjointSet{
 }
     }
 
-    void UnionBySize ( int u, int v ) { //TC: O(4*alpha)
+   void UnionBySize(int u, int v) {
 
-        int ult_u = FindUltimateParent (u);
-        int ult_v = FindUltimateParent (v);
+    int ult_u = FindUltimateParent(u);
+    int ult_v = FindUltimateParent(v);
 
-        if ( size[ult_u] < size[ult_v] ) {
+    if (ult_u == ult_v) return;   
 
-            parent[ult_u] = ult_v;
-            size[ult_v] += size[ult_u];
-
-        }
-
-        else {
-
-            parent[ult_v] = ult_u;
-            size[ult_u] += size[ult_v]; 
-        }
+    if(size[ult_u] < size[ult_v]) {
+        parent[ult_u] = ult_v;
+        size[ult_v] += size[ult_u];
     }
+    else {
+        parent[ult_v] = ult_u;
+        size[ult_u] += size[ult_v];
+    }
+}
 
 };
