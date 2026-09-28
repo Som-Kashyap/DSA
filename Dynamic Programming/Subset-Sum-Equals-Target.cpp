@@ -3,7 +3,7 @@
 // Approach: DP is used with memoization, array is traversed backward recursively and all subsets are considered following take/notTake
 //           approach, OR of the two is returned
 
-// TC and SC: O(sum*n)
+// TC and SC: O(sum*n), there are a total of (sum*n) states
 
 #include<bits/stdc++.h>
 
